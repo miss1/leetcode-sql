@@ -19,10 +19,13 @@
 * 重命名：df.rename(columns={'author_id': 'id'}, inplace=True) 将author_id改为id
 * 获取前N条数据：df.head(N)
 * 获取后N条数据：df.tail(N)
-* 数据分类：df.groupby('Department')['Salary'].transform('max') -> 根据Department分类，计算每个类中最大的Salary
 * transform() -> 'max', 'min', 'sum', 'mean', 'median', 'count(非NaN值的数量)', 'size(包括NaN值)'
 * 数据排名：scores['rank'] = scores['score'].rank(method='dense', ascending=False)
 * rank -> 'first',相同的值按顺序拍下去；'dense': 相同的值排名相同，下一个值排下一个位置
+
+分类，group
+* df.groupby('Department')['Salary'].transform('max') -> 根据Department分类，计算每个类中最大的Salary, 184
+* 分类之后处理生成多列数据：1484, 1693
 
 products.melt(id_vars=None, value_vars=None, var_name=None, value_name='value', col_level=None)
 * value_vars: 要融化的列名
@@ -37,6 +40,8 @@ DataFrame.loc[row_indexer, column_indexer]
 * len(df)
 * df.shape[0]
 * df.shape[1] -> 列的数量
+* nunique() -> 去重之后的数量, 2356
+* courses.groupby('class')['student'].nunique().reset_index()
 
 ### 多表
 
