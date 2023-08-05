@@ -55,6 +55,13 @@ left join
 * 将orders表合并到customers中，根据customers中的id和orders中的customerId合并，不存在的id显示null
 * 判断null: df = df[df['customerId'].isna()]
 
+pd.merge(left, right, how='inner', on=None, left_on=None, right_on=None)
+* how: inner(default), outer, left, right
+* left_on, right_on; 两个表中key的名字不一样时
+* on，key名字一样，可以多个
+* 1280
+
+
 pd.concat(objs, axis=0, join='outer', ignore_index=False, keys=None)
 * 连接多个表
 * objs: [a, b, c], 要连接的表
